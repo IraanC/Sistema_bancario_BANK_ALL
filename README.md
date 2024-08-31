@@ -1,8 +1,3 @@
-
----
-
-# Documentação do Sistema Bancário do Bank ALL
-
 ## Visão Geral
 
 O sistema bancário do Bank ALL é um aplicativo simples de gerenciamento financeiro que permite realizar depósitos, saques e consultar o extrato da conta. O sistema também possui limitações para saques e fornece mensagens de erro apropriadas para operações inválidas.
