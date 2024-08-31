@@ -1,23 +1,23 @@
 ## Visão Geral
 
-O sistema bancário do Bank ALL é um aplicativo simples de gerenciamento financeiro que permite realizar depósitos, saques e consultar o extrato da conta. O sistema também possui limitações para saques e fornece mensagens de erro apropriadas para operações inválidas.
+O sistema bancário do Bank ALL é uma aplicação simplificada para gerenciamento de contas bancárias fictícias. Ele permite realizar depósitos, saques e consultar extratos. O sistema tem um limite de saque e um número máximo de saques permitidos por período.
 
 ## Menu de Opções
 
-O menu principal do sistema apresenta as seguintes opções:
+O menu principal do sistema oferece as seguintes opções:
 
-- **[d] Depositar**: Realiza um depósito na conta.
-- **[s] Sacar**: Realiza um saque da conta.
-- **[e] Extrato**: Exibe o extrato das operações realizadas.
-- **[q] Sair**: Encerra o programa.
+- **[d] Depositar**: Realizar um depósito na conta.
+- **[s] Sacar**: Realizar um saque da conta.
+- **[e] Extrato**: Exibir o extrato das transações realizadas.
+- **[q] Sair**: Encerrar o programa.
 
 ## Variáveis e Limites
 
-- **saldo**: Representa o saldo atual da conta. Inicialmente é definido como 0.
-- **limit**: Representa o limite máximo permitido para um saque. Inicialmente é definido como 1000.
-- **extrato**: Armazena o histórico de transações realizadas (depósitos e saques). Inicialmente é uma string vazia.
-- **numero_saques**: Conta o número de saques realizados. Inicialmente é definido como 0.
-- **LIMITE_SAQUES**: Define o número máximo de saques permitidos por período. Inicialmente é definido como 3.
+- **saldo**: Representa o saldo atual da conta. Inicialmente definido como 0.
+- **limit**: Limite máximo permitido para um saque. Inicialmente definido como R$ 1000,00.
+- **extrato**: Histórico das transações realizadas (depósitos e saques). Inicialmente uma string vazia.
+- **numero_saques**: Contador de saques realizados. Inicialmente definido como 0.
+- **LIMITE_SAQUES**: Número máximo de saques permitidos por período. Inicialmente definido como 3.
 
 ## Funcionalidades
 
@@ -27,7 +27,7 @@ O menu principal do sistema apresenta as seguintes opções:
 - **Entrada**: Valor do depósito (deve ser um número positivo).
 - **Processo**: Adiciona o valor ao saldo e registra a transação no extrato.
 - **Mensagens**:
-  - Se o valor for positivo, a transação é realizada com sucesso e uma mensagem de confirmação é exibida.
+  - Se o valor for positivo, a transação é realizada e uma mensagem de confirmação é exibida.
   - Se o valor for inválido (não positivo), uma mensagem de erro é exibida.
 
 ### 2. Saque (`s`)
@@ -40,27 +40,27 @@ O menu principal do sistema apresenta as seguintes opções:
   - Verifica se o número máximo de saques foi atingido.
   - Se todas as condições forem satisfeitas, o saque é realizado e registrado no extrato. Caso contrário, uma mensagem de erro apropriada é exibida.
 - **Mensagens de Erro**:
-  - "Operação falhou: você não tem saldo suficiente."
-  - "Operação falhou: o valor do saque é maior que o limite."
-  - "Operação falhou: número de saques excedido."
-  - "Operação falhou: valor informado inválido."
+  - "Operação falhou: saldo insuficiente." - Se o valor do saque exceder o saldo disponível.
+  - "Operação falhou: valor do saque maior que o limite permitido." - Se o valor do saque exceder o limite estabelecido.
+  - "Operação falhou: número máximo de saques excedido." - Se o número de saques atingir o limite máximo.
+  - "Operação falhou: valor informado inválido." - Se o valor informado for não positivo.
 
 ### 3. Extrato (`e`)
 
 - **Descrição**: Exibe o extrato das transações realizadas.
 - **Processo**: Mostra todas as movimentações realizadas e o saldo atual.
 - **Mensagens**:
-  - Se não houver transações, exibe uma mensagem indicando que não foram realizadas movimentações.
+  - Se não houver transações, exibe a mensagem "Não foram realizadas movimentações."
   - Exibe o saldo atual da conta.
 
 ### 4. Sair (`q`)
 
 - **Descrição**: Encerra o programa.
-- **Processo**: Imprime uma mensagem de saída e encerra o loop do programa.
+- **Processo**: Imprime uma mensagem de despedida e encerra o loop do programa.
 
 ## Tratamento de Erros
 
-- **Opção inválida**: Quando o usuário insere uma opção que não está no menu, uma mensagem de erro é exibida indicando que a opção é inválida.
+- **Opção Inválida**: Quando o usuário insere uma opção que não está no menu, o sistema exibe a mensagem "[ERRO] Opção inválida".
 
 ## Exemplo de Execução
 
@@ -79,7 +79,7 @@ O menu principal do sistema apresenta as seguintes opções:
 2. **Saque**:
    - Usuário escolhe `s`.
    - Sistema solicita o valor para saque.
-   - O sistema verifica o saldo, limite e número de saques.
+   - O sistema verifica saldo, limite e número de saques.
    - Se qualquer condição falhar, uma mensagem de erro é exibida.
 
 3. **Extrato**:
@@ -92,4 +92,4 @@ O menu principal do sistema apresenta as seguintes opções:
 
 ---
 
-Esta documentação cobre as principais funcionalidades e regras do sistema bancário do Bank ALL. Se houver mais requisitos ou alterações, ajuste a documentação conforme necessário.
+Esta documentação detalha o funcionamento e regras do sistema bancário fictício Bank ALL. Ajustes podem ser feitos conforme necessário para atender a requisitos adicionais ou alterações.
